@@ -4,18 +4,19 @@
 import { motion } from "framer-motion";
 import { FeatureCard } from "./FeatureCard";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 export const AnimatedContent = () => {
   return (
     <>
-    <motion.h1 
-      className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary py-2"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      Reflow
-    </motion.h1>
+      <motion.h1 
+        className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-secondary py-2"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        Reflow
+      </motion.h1>
       <motion.p 
         className="text-lg text-center mb-12 text-text"
         initial={{ opacity: 0, y: 20 }}
@@ -32,15 +33,21 @@ export const AnimatedContent = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <FeatureCard title="Pomodoro Timer" description="Focus on your tasks with customizable work sessions">
-          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Start Timer</Button>
+          <Link href="/timer" passHref>
+            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Start Timer</Button>
+          </Link>
         </FeatureCard>
         
         <FeatureCard title="Smart Breaks" description="AI-powered break suggestions to help you recharge">
-          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Explore Breaks</Button>
+          <Link href="/breaks" passHref>
+            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Explore Breaks</Button>
+          </Link>
         </FeatureCard>
         
         <FeatureCard title="Task Management" description="Organize and prioritize your tasks efficiently">
-          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Manage Tasks</Button>
+          <Link href="/tasks" passHref>
+            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Manage Tasks</Button>
+          </Link>
         </FeatureCard>
       </motion.div>
     </>
