@@ -1,0 +1,25 @@
+import React from 'react';
+import Link from 'next/link';
+import { Button } from "@/components/ui/button";
+
+const Header: React.FC = () => {
+    return (
+      <header className="bg-background shadow-sm">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1>
+
+          <Link href="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Reflow</Link>
+        </h1>
+          <div className="space-x-4">
+            <Link href="/features" className="text-text hover:text-accent">Features</Link>
+            <Link href="/about" className="text-text hover:text-accent">About</Link>
+            <Button variant="outline" className="text-accent border-accent hover:bg-accent hover:text-white">
+              Sign In
+            </Button>
+          </div>
+        </nav>
+      </header>
+    );
+  };
+
+export default Header;
