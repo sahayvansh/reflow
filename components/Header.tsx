@@ -13,6 +13,7 @@ const Header: React.FC = () => {
           <div className="space-x-4">
             <Link href="/features" className="text-text hover:text-accent">Features</Link>
             <Link href="/about" className="text-text hover:text-accent">About</Link>
+            <Link href="/dashboard" className="text-text hover:text-accent">Dashboard</Link>
             <Button variant="outline" className="text-accent border-accent hover:bg-accent hover:text-white">
               Sign In
             </Button>

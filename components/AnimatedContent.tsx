@@ -9,7 +9,7 @@ export const AnimatedContent = () => {
   return (
     <>
     <motion.h1 
-      className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 py-2"
+      className="text-4xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-accent to-secondary py-2"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -32,15 +32,15 @@ export const AnimatedContent = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <FeatureCard title="Pomodoro Timer" description="Focus on your tasks with customizable work sessions">
-          <Button variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-white">Start Timer</Button>
+          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Start Timer</Button>
         </FeatureCard>
         
         <FeatureCard title="Smart Breaks" description="AI-powered break suggestions to help you recharge">
-          <Button variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-white">Explore Breaks</Button>
+          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Explore Breaks</Button>
         </FeatureCard>
         
         <FeatureCard title="Task Management" description="Organize and prioritize your tasks efficiently">
-          <Button variant="outline" className="w-full text-accent border-accent hover:bg-accent hover:text-white">Manage Tasks</Button>
+          <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Manage Tasks</Button>
         </FeatureCard>
       </motion.div>
     </>

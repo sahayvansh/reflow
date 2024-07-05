@@ -19,9 +19,10 @@ const config = {
     },
     extend: {
       colors: {
-        background: '#FFE9C4',
-        text: '#1a202c',
-        accent: '#4a90e2',
+        background: '#B0C5A4', 
+        text: '#D37676', 
+        accent: '#EBC49F', 
+        secondary: '#F1EF99',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -31,10 +32,10 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
+        // secondary: {
+        //   DEFAULT: "hsl(var(--secondary))",
+        //   foreground: "hsl(var(--secondary-foreground))",
+        // },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
