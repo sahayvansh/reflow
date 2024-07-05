@@ -52,7 +52,7 @@ export const TimerProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const playSound = () => {
-    const audio = new Audio('/path-to-your-sound-file.mp3');
+    const audio = new Audio("/audios/success-48018.mp3");
     audio.play();
   };
 
