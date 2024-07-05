@@ -8,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import AudioPlayer from '@/components/AudioPlayer'
+
 
 const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
@@ -57,9 +59,10 @@ export default function BreaksPage() {
     <div className="min-h-screen flex flex-col bg-background text-text bg-grain">
       <Header />
       <div className="container mx-auto mt-10 p-4 flex-grow">
+        <div className="flex gap-4 max-w-5xl mx-auto">
         <Card className="w-full max-w-2xl mx-auto bg-secondary">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-center text-secondary">Smart Breaks</CardTitle>
+            <CardTitle className="text-3xl font-bold text-center">Smart &nbsp;Breaks</CardTitle>
             <CardDescription className="text-center text-text">Explore AI-powered break suggestions to help you recharge and boost productivity.</CardDescription>
           </CardHeader>
           <CardContent>
@@ -106,6 +109,10 @@ export default function BreaksPage() {
             )}
           </CardContent>
         </Card>
+        <div className="w-60">
+            <AudioPlayer />
+        </div>
+        </div>
       </div>
       <Footer />
     </div>
