@@ -1,4 +1,3 @@
-// components/AnimatedContent.tsx
 'use client';
 
 import { motion } from "framer-motion";
@@ -34,19 +33,19 @@ export const AnimatedContent = () => {
       >
         <FeatureCard title="Pomodoro Timer" description="Focus on your tasks with customizable work sessions">
           <Link href="/timer" passHref>
-            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Start Timer</Button>
+            <Button variant="outline" className="w-full text-zinc-900 border-accent hover:bg-accent hover:text-slate-700">Start Timer</Button>
           </Link>
         </FeatureCard>
         
         <FeatureCard title="Smart Breaks" description="AI-powered break suggestions to help you recharge">
           <Link href="/breaks" passHref>
-            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Explore Breaks</Button>
+            <Button variant="outline" className="w-full text-zinc-900 border-accent hover:bg-accent hover:text-slate-700">Explore Breaks</Button>
           </Link>
         </FeatureCard>
         
         <FeatureCard title="Task Management" description="Organize and prioritize your tasks efficiently">
           <Link href="/tasks" passHref>
-            <Button variant="outline" className="w-full text-gray-700 border-accent hover:bg-accent hover:text-white">Manage Tasks</Button>
+            <Button variant="outline" className="w-full text-zinc-900 border-accent hover:bg-accent hover:text-slate-700">Manage Tasks</Button>
           </Link>
         </FeatureCard>
       </motion.div>

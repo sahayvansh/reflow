@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 const Header: React.FC = () => {
     return (
@@ -14,9 +14,9 @@ const Header: React.FC = () => {
             <Link href="/features" className="text-text hover:text-accent">Features</Link>
             <Link href="/about" className="text-text hover:text-accent">About</Link>
             <Link href="/dashboard" className="text-text hover:text-accent">Dashboard</Link>
-            <Button className="text-slate-600 border-accent hover:bg-accent hover:text-white">
+            {/* <Button className="text-zinc-900 border-accent hover:bg-accent hover:text-black">
               Sign In
-            </Button>
+            </Button> */}
           </div>
         </nav>
       </header>

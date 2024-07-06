@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTimer } from '@/components/TimerContext';
+import AmbientMusicPlayer from '@/components/AmbientSoundPlayer';
 
 const DEFAULT_TIMES = [
   { name: 'Classic', work: 25, break: 5 },
@@ -22,7 +23,7 @@ export default function TimerPage() {
   } = useTimer();
   const router = useRouter();
 
-  const formatTime = (seconds: number) => {
+  const formatTime = (seconds:number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
@@ -34,9 +35,9 @@ export default function TimerPage() {
       <div className="container mx-auto mt-10 p-6 bg-background text-text">
         <h1 className="text-4xl font-bold mb-8 text-center text-secondary">Pomodoro Timer</h1>
         
-        <div className="max-w-md mx-auto bg-secondary p-6 rounded-lg shadow-lg">
+        <div className="max-w-md mx-auto bg-[#e7d4b5] p-6 rounded-lg shadow-lg">
           <motion.div 
-            className="text-6xl font-bold text-center mb-8"
+            className="text-6xl font-bold text-center mb-8 text-zinc-600"
             initial={{ scale: 1 }}
             animate={{ scale: isActive ? 1.1 : 1 }}
             transition={{ duration: 0.5 }}
@@ -45,15 +46,15 @@ export default function TimerPage() {
           </motion.div>
           
           <div className="flex justify-center space-x-4 mb-8">
-            <Button onClick={toggleTimer} variant="outline" className="w-32">
+            <Button onClick={toggleTimer} variant="outline" className="w-32 text-black">
               {isActive ? 'Pause' : 'Start'}
             </Button>
-            <Button onClick={resetTimer} variant="outline" className="w-32">Reset</Button>
+            <Button onClick={resetTimer} variant="outline" className="w-32 text-black">Reset</Button>
           </div>
 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <label className="block text-sm font-medium mb-1">Work Time (min)</label>
+              <label className="block text-sm font-medium mb-1 text-zinc-700">Work Time (min)</label>
               <Input
                 type="number"
                 value={workTime}
@@ -62,11 +63,11 @@ export default function TimerPage() {
                   setWorkTime(newWorkTime);
                   if (isWorkTime) setTimeLeft(newWorkTime * 60);
                 }}
-                className="w-full"
+                className="w-full text-black"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Break Time (min)</label>
+              <label className="block text-sm font-medium mb-1 text-zinc-700">Break Time (min)</label>
               <Input
                 type="number"
                 value={breakTime}
@@ -75,19 +76,19 @@ export default function TimerPage() {
                   setBreakTime(newBreakTime);
                   if (!isWorkTime) setTimeLeft(newBreakTime * 60);
                 }}
-                className="w-full"
+                className="w-full text-black"
               />
             </div>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-lg font-semibold ml-32 mb-2">Quick Presets</h3>
+            <h3 className="text-lg font-semibold mb-2 text-zinc-700">Quick Presets</h3>
             <div className="flex flex-wrap gap-2">
               {DEFAULT_TIMES.map((preset) => (
                 <Button
                   key={preset.name}
                   variant="outline"
-                  className="text-sm ml-4"
+                  className="text-sm text-black"
                   onClick={() => {
                     setWorkTime(preset.work);
                     setBreakTime(preset.break);
@@ -100,13 +101,18 @@ export default function TimerPage() {
               ))}
             </div>
           </div>
+
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2 text-zinc-700">Ambient Sounds</h3>
+            <AmbientMusicPlayer />
+          </div>
         </div>
         
         <div className="text-center mt-8">
           <Button 
             onClick={() => router.push('/breaks')}
             variant="outline"
-            className="bg-accent text-slate-500 hover:bg-accent hover:text-white"
+            className="bg-accent text-slate-500 hover:bg-accent hover:text-black"
           >
             Explore Smart Breaks
           </Button>

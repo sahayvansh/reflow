@@ -19,10 +19,10 @@ const config = {
     },
     extend: {
       colors: {
-        background: '#B0C5A4', 
-        text: '#D37676', 
-        accent: '#EBC49F', 
-        secondary: '#F1EF99',
+        background: '#405D72', 
+        text: '#758694', 
+        accent: '#F7E7DC', 
+        secondary: '#FFF8F3',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
