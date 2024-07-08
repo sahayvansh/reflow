@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,18 +9,15 @@
   --font-poppins: 'Poppins', sans-serif;
 }
 
-body, h3 {
-  font-family: var(--font-poppins), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #000000; /* Changed to a darker color for better visibility */
+body,h3 {
+  font-family: var(--font-poppins),'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+h3{
+  background: none;
+}
 h1, h2, h4, h5, h6 {
-  font-family: "La Belle Aurore", cursive, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "La Belle Aurore", cursive;
   font-weight: 400;
   font-style: normal;
 }
 
-body {
-  background-color: #3f5765; /* Use the exact color from your desktop version */
-  min-height: 100vh; /* Ensure the background covers the full viewport height */
-}
