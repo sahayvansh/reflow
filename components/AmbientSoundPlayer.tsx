@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ReactHowler from 'react-howler';
 import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
 import { Card, CardContent } from "@/components/ui/card"
-import { Volume2, VolumeX, Play, Pause } from 'lucide-react';
+import { Volume2, VolumeX, Play, Pause, Power, PowerOff } from 'lucide-react';
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
 
 interface Sound {
   id: string;
@@ -94,10 +94,21 @@ const AmbientSoundPlayer: React.FC = () => {
           {sounds.map((sound: Sound) => (
             <div key={sound.id} className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
-                <Switch
-                  checked={playingSounds[sound.id] || false}
-                  onCheckedChange={() => toggleSound(sound.id)}
-                />
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => toggleSound(sound.id)}
+                    className={`w-8 h-8 rounded-full ${
+                      playingSounds[sound.id] ? 'bg-green-500 text-white' : 'bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    {playingSounds[sound.id] ? <Power size={16} /> : <PowerOff size={16} />}
+                  </Button>
+                </motion.div>
                 <span className="text-sm font-medium text-slate-700">{sound.name}</span>
               </div>
               <div className="flex items-center space-x-2 w-1/2">
