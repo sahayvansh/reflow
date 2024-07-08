@@ -16,6 +16,9 @@ const sounds: Sound[] = [
   { id: 'rain', name: 'Rain', file: '/music/rain.mp3' },
   { id: 'chatting', name: 'Café Chatter', file: '/music/chatting.mp3' },
   { id: 'coffee', name: 'Coffee Machine', file: '/music/coffee-machine.mp3' },
+  { id: 'cups', name: 'Cups', file: '/music/cups.mp3' },
+  { id: 'fireplace', name: 'Fireplace', file: '/music/fireplace.mp3' },
+  { id: 'sunny', name: 'Sunny Day', file: '/music/sunnyday.mp3' },
 ];
 
 const AmbientSoundPlayer: React.FC = () => {
@@ -70,13 +73,13 @@ const AmbientSoundPlayer: React.FC = () => {
     <Card className="w-full max-w-md mx-auto bg-[#e7d4b5] p-6 rounded-lg shadow-lg">
       <CardContent>
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-slate-800">Ambient Café</h2>
+          <h2 className="text-2xl font-bold text-slate-800">Reflow Café</h2>
           <div className="flex items-center space-x-2">
             <Button
               onClick={toggleAllSounds}
               variant="outline"
               size="icon"
-              className="w-10 h-10 rounded-full bg-secondary hover:bg-secondary-dark text-white"
+              className="w-10 h-10 rounded-full bg-gray-500 hover:bg-secondary-dark text-white"
             >
               {isAnyPlaying ? <Pause size={20} /> : <Play size={20} />}
             </Button>

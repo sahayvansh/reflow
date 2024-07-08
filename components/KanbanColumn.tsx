@@ -16,7 +16,7 @@ const KanbanColumn: React.FC<Props> = ({ column, onUpdateTask, onDeleteTask, chi
 
   return (
     <div className="flex-1 bg-accent/10 backdrop-blur-sm p-4 rounded-md">
-      <h2 className="font-semibold mb-4 text-secondary">{column.title}</h2>
+      <h2 className="font-serif text-2xl mb-4 ml-28 text-secondary">{column.title}</h2>
       <div ref={setNodeRef}>
         <SortableContext items={column.tasks.map(task => task.id)} strategy={verticalListSortingStrategy}>
           {column.tasks.map((task) => (

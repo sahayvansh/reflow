@@ -14,15 +14,15 @@ const Footer: React.FC = () => {
             <div>
               <h3 className="text-lg font-semibold mb-2 text-slate-800">Quick Links</h3>
               <ul className="space-y-1">
-                <li><Link href="/features" className="text-sm hover:text-accent">Features</Link></li>
-                <li><Link href="/about" className="text-sm hover:text-accent">About Us</Link></li>
+                {/* <li><Link href="/features" className="text-sm hover:text-accent">Features</Link></li> */}
+                <li><Link href="/about" className="text-sm hover:text-accent">About Me</Link></li>
               </ul>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2 text-slate-800">Connect</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="text-sm hover:text-accent">LinkedIn</a></li>
-                <li><a href="#" className="text-sm hover:text-accent">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/sahayvansh/" target="_blank" className="text-sm hover:text-accent">LinkedIn</a></li>
+                <li><a href="https://github.com/sahayvansh" target="_blank" className="text-sm hover:text-accent">GitHub</a></li>
               </ul>
             </div>
           </div>

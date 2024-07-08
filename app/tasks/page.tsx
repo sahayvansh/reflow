@@ -11,12 +11,15 @@ import KanbanColumn from '@/components/KanbanColumn';
 import KanbanAddCardButton from '@/components/KanbanAddCardButton';
 import { Task, Column } from '@/types';
 
-const TaskManagementPage: React.FC = () => {
-  const [columns, setColumns] = useState<Column[]>([
-    { id: 'todo', title: 'To Do', tasks: [] },
-    { id: 'doing', title: 'Doing', tasks: [] },
-    { id: 'done', title: 'Done', tasks: [] },
-  ]);
+const initialColumns: Column[] = [
+  { id: 'todo', title: 'To Do', tasks: [] },
+  { id: 'doing', title: 'Doing', tasks: [] },
+  { id: 'done', title: 'Done', tasks: [] },
+];
+
+export default function TaskManagementPage() {
+  const [columns, setColumns] = useState<Column[]>(initialColumns);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -30,11 +33,14 @@ const TaskManagementPage: React.FC = () => {
     if (storedColumns) {
       setColumns(JSON.parse(storedColumns));
     }
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('taskColumns', JSON.stringify(columns));
-  }, [columns]);
+    if (isLoaded) {
+      localStorage.setItem('taskColumns', JSON.stringify(columns));
+    }
+  }, [columns, isLoaded]);
 
   const handleDragEnd = (event: any) => {
     const { active, over } = event;
@@ -109,6 +115,10 @@ const TaskManagementPage: React.FC = () => {
     );
   };
 
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-text">
       <Header />
@@ -142,6 +152,4 @@ const TaskManagementPage: React.FC = () => {
       <Footer />
     </div>
   );
-};
-
-export default TaskManagementPage;
+}
