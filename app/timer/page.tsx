@@ -37,7 +37,7 @@ export default function TimerPage() {
         
         <div className="max-w-md mx-auto bg-[#e7d4b5] p-6 rounded-lg shadow-lg">
           <motion.div 
-            className="text-6xl font-bold text-center mb-8 text-zinc-600"
+            className="text-4xl sm:text-6xl font-bold text-center mb-8 text-zinc-600"
             initial={{ scale: 1 }}
             animate={{ scale: isActive ? 1.1 : 1 }}
             transition={{ duration: 0.5 }}
@@ -52,7 +52,7 @@ export default function TimerPage() {
             <Button onClick={resetTimer} variant="outline" className="w-32 text-black">Reset</Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-sm font-medium mb-1 text-zinc-700">Work Time (min)</label>
               <Input

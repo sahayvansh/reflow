@@ -124,14 +124,14 @@ export default function TaskManagementPage() {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-6 text-center text-secondary">Task Management</h1>
-        <div className="flex gap-4">
-          <div className="w-1/4 space-y-4">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div className="w-full lg:w-1/4 space-y-4">
             <PomodoroStatus />
             <AmbientSoundPlayer />
           </div>
-          <div className="w-3/4">
+          <div className="w-full lg:w-3/4">
             <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-              <div className="flex gap-4">
+              <div className="flex gap-4 overflow-x-auto pb-4">
                 {columns.map((column) => (
                   <KanbanColumn
                     key={column.id}

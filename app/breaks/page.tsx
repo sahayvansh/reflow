@@ -66,12 +66,12 @@ export default function BreaksPage() {
     <div className="min-h-screen flex flex-col bg-background text-text bg-grain">
       <Header />
       <div className="container mx-auto mt-10 p-4 flex-grow">
-        <div className="flex gap-4 max-w-6xl mx-auto">
-          <div className="w-1/4">
+        <div className="flex flex-col lg:flex-row gap-4 max-w-6xl mx-auto">
+          <div className="w-full lg:w-1/4">
             <PomodoroStatus />
             <AmbientSoundPlayer />
           </div>
-          <Card className="w-2/4 bg-[#e7d4b5]">
+          <Card className="w-full lg:w-2/4 bg-[#e7d4b5]">
             <CardHeader>
               <CardTitle className="text-3xl text-zinc-700 font-bold text-center">Smart Breaks</CardTitle>
               <CardDescription className="text-center text-text">Explore AI-powered break suggestions to help you recharge and boost productivity.</CardDescription>
@@ -98,7 +98,7 @@ export default function BreaksPage() {
                     "Get Custom Break Suggestion"
                   )}
                 </Button>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {presetPrompts.map((prompt, index) => (
                     <Button
                       key={index}
@@ -122,7 +122,7 @@ export default function BreaksPage() {
               )}
             </CardContent>
           </Card>
-          <div className="w-1/4">
+          <div className="w-full lg:w-1/4">
             <MiniGame />
           </div>
         </div>

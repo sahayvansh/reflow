@@ -31,7 +31,7 @@ export default function AboutMePage() {
             <p className="mb-6">
               This website is a personal project aimed at enhancing my web development skills while addressing my own productivity challenges.
             </p>
-            <div className="flex justify-center space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4">
               <Button variant="outline" onClick={() => handleRedirect('https://www.github.com')}>
                 <FaGithub className="mr-2 h-4 w-4" /> GitHub
               </Button>
